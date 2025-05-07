@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import ListExample from './components/Nav';
+import Movies from './pages/Movies'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const url = 'https://api.themoviedb.org/3/movie/popular?api_key=9070b85671a773e3d99d719c3a60a48b';
@@ -30,7 +31,7 @@ function App() {
       <ListExample />
       <Routes>
         <Route path="/home" element={<div>Home Page</div>} />
-        <Route path="/movies" element={<div>Movies Page</div>} />
+        <Route path="/movies" element={<Movies>Movies Page</Movies>} />
       </Routes>
     </Router>
   );
