@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -16,7 +16,9 @@ function Movies() {
       {movies.map(movie => (
         <div key={movie.id}>
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-            <p>{movie.title}</p>
+            <Link to={`/movies/${movie.id}`}>
+              <p>{movie.title}</p>
+            </Link>
         </div>
       ))}
     </div>
