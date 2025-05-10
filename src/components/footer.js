@@ -1,7 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Footer() {
-  return null;
+  return null; //I tried the footer many times but bootstrap chose violence this day
 }
 
 export default Footer;

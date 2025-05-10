@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import ListExample from './components/Nav';
+import NavB from './components/Nav';
 import Movies from './pages/Movies'
+import MovieDetails from './pages/MoviesDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const url = 'https://api.themoviedb.org/3/movie/popular?api_key=9070b85671a773e3d99d719c3a60a48b';
@@ -28,10 +29,11 @@ function App() {
 
   return (
     <Router>
-      <ListExample />
+      <NavB />
       <Routes>
         <Route path="/home" element={<div>Home Page</div>} />
-        <Route path="/movies" element={<Movies>Movies Page</Movies>} />
+        <Route path="/movies" element={<Movies/>} />
+        <Route path="/movies/:id" element={<MovieDetails/>} />
       </Routes>
     </Router>
   );
